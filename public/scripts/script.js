@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function updatePosts() {
     // Faz uma requisição fetch para a api passada
-    fetch("http://192.168.100.7:3000/api/all")
+    fetch("http://:3000/api/all") //seu ipv4
         .then((res) => {
             //retorna a resposta
             return res.json();
@@ -63,7 +63,7 @@ function newPost() {
 
     if (title != "" && description != "") {
         // Faz uma requisição POST para a api
-        fetch("http://192.168.100.7:3000/api/new", options).then((res) => {
+        fetch("http://:3000/api/new", options).then((res) => { //seu ipv4
 
             // Atualiza a lista de posts
             updatePosts()
@@ -87,7 +87,7 @@ function newPost() {
 function deletePost(postDel) {
 
     // Faz uma requisição DELETE para a api, especificando o ID do post
-    fetch("http://192.168.100.7:3000/api/delete/" + postDel, { method: 'DELETE' }).then(res => {
+    fetch("http://:3000/api/delete/" + postDel, { method: 'DELETE' }).then(res => { //seu ipv4
 
         // Atualiza a lista de posts
         updatePosts()
